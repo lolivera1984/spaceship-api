@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Apollo 11",
+    "model": "Saturn V",
+    "manufacturer": "NASA"
+  },
+  {
+    "name": "Space Shuttle Discovery",
+    "model": "OV-103",
+    "manufacturer": "NASA"
+  },
+  {
+    "name": "Dragon",
+    "model": "Crew Dragon",
+    "manufacturer": "SpaceX"
+  },
+  {
+    "name": "Starliner",
+    "model": "CST-100",
+    "manufacturer": "Boeing"
+  },
+  {
+    "name": "Orion",
+    "model": "MPCV",
+    "manufacturer": "NASA"
+  },
+  {
+    "name": "Soyuz",
+    "model": "MS-20",
+    "manufacturer": "RSC Energia"
+  },
+  {
+    "name": "Vostok 1",
+    "model": "3KA",
+    "manufacturer": "Soviet Union"
+  },
+  {
+    "name": "Progress",
+    "model": "MS",
+    "manufacturer": "RSC Energia"
+  },
+  {
+    "name": "Mir",
+    "model": "Core Module",
+    "manufacturer": "Soviet Union"
+  },
+  {
+    "name": "Luna 2",
+    "model": "Ye-1",
+    "manufacturer": "Soviet Union"
+  },
+  {
+    "name": "Millennium Falcon",
+    "model": "YT-1300",
+    "manufacturer": "Corellian Engineering Corporation"
+  },
+  {
+    "name": "X-Wing",
+    "model": "T-65B",
+    "manufacturer": "Incom Corporation"
+  },
+  {
+    "name": "TIE Fighter",
+    "model": "Twin Ion Engine",
+    "manufacturer": "Sienar Fleet Systems"
+  },
+  {
+    "name": "Slave I",
+    "model": "Firespray-31",
+    "manufacturer": "Kuat Systems Engineering"
+  },
+  {
+    "name": "Imperial Star Destroyer",
+    "model": "Imperial I-class",
+    "manufacturer": "Kuat Drive Yards"
+  }
+]
