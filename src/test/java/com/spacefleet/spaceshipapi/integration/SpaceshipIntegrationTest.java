@@ -41,7 +41,6 @@ public class SpaceshipIntegrationTest {
                 .baseUrl("http://localhost:" + port)
                 .build();
 
-        // Login and get the token as a JSON
         String loginRequest = """
         {
           "username": "admin",
@@ -62,7 +61,6 @@ public class SpaceshipIntegrationTest {
         Map<String, String> responseMap = objectMapper.readValue(responseBody, new TypeReference<>() {});
         String token = responseMap.get("token");
 
-        // Create a Ship
         SpaceshipDTO newShip = new SpaceshipDTO(null, "TestShip", "Model-T", "TestCorp");
         client.post()
                 .uri("/spaceships")
@@ -74,13 +72,12 @@ public class SpaceshipIntegrationTest {
                 .expectBody()
                 .jsonPath("$.name").isEqualTo("TestShip");
 
-        // Update a Ship
         client.get()
                 .uri("/spaceships/search?name=TestShip")
                 .header("Authorization", "Bearer " + token)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody()
-                .jsonPath("$[0].model").isEqualTo("Model-T");
+                .jsonPath("$.content[0].model").isEqualTo("Model-T");
     }
 }

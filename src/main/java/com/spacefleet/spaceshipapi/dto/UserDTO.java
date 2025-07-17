@@ -1,19 +1,14 @@
 package com.spacefleet.spaceshipapi.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class UserDTO {
+public record UserDTO(
+        String id,
 
-    private String id;
-    private String name;
-    private String username;
-    private String password;
+        @NotBlank(message = "user Name is required")
+        String name,
 
-}
+        String username,
+
+        String password
+) {}

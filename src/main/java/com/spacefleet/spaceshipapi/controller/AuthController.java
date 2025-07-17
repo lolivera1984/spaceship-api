@@ -26,8 +26,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> login(@RequestBody UserDTO userCredentials) {
-        String username = userCredentials.getUsername();
-        String password = userCredentials.getPassword();
+        String username = userCredentials.username();
+        String password = userCredentials.password();
 
         log.info("AuthController, Attempting login for username: {}", username);
 

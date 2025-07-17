@@ -1,0 +1,18 @@
+# Ignore Maven output directory
+/target/
+
+# Ignore IntelliJ IDEA configuration directory
+/.idea/
+
+# Ignore IntelliJ IDEA workspace files
+*.iml
+*.iws
+
+# Common system files
+.DS_Store
+
+# Logs
+*.log
+
+# Environment files
+.env

@@ -1,2 +1,9 @@
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/config/TestSecurityConfig.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/controller/AuthControllerTest.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/controller/SpaceshipControllerTest.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/integration/SpaceshipIntegrationTest.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/repository/SpaceshipRepositoryTest.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/repository/UserRepositoryTest.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/service/JwtServiceTest.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/service/SpaceshipServiceTest.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/test/java/com/spacefleet/spaceshipapi/service/UserServiceTest.java

@@ -17,10 +17,9 @@ public class NegativeIdAspect {
     @Before("execution(* com.spacefleet.spaceshipapi.controller.SpaceshipController.getById(..))")
     public void logIfIdIsNegative(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
-        if (args.length > 0 && args[0] instanceof String id) {
-            if (id.startsWith("-")) {
-                logger.warn("NegativeIdAspect, Requested spaceship with ID starting with negative sign: {}", id);
-            }
+        if (args.length > 0 && args[0] instanceof String id && id.startsWith("-")) {
+            logger.warn("NegativeIdAspect, Requested spaceship with ID starting with negative sign: {}", id);
         }
     }
+
 }

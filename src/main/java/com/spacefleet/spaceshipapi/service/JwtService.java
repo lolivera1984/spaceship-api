@@ -18,11 +18,14 @@ public class JwtService {
 
     @Value("${jwt.secret}")
     private String secret;
-    private static final long EXPIRATION = 1000 * 60 * 60; // 1 hour
+    private static final long EXPIRATION = 1000 * 60 * 60;
+    private static final String ERROR_MESSAGE_JWT_SECRET_NOT_CONFIG = "JwtService, JWT secret is not configured.";
+    private static final String ERROR_MESSAGE_ERROR_GENERATING_TOKEN = "JwtService, Error generating token for username {}: {}";
+    private static final String ERROR_MESSAGE_ERROR_VALIDATING_TOKEN = "JwtService, Error validating token: {}";
 
     private Key getSigningKey() {
         if (secret == null || secret.isBlank()) {
-            throw new IllegalStateException("JwtService, JWT secret is not configured.");
+            throw new IllegalStateException(ERROR_MESSAGE_JWT_SECRET_NOT_CONFIG);
         }
         byte[] keyBytes = Base64.getDecoder().decode(secret);
         return new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
@@ -38,7 +41,7 @@ public class JwtService {
                     .compact();
 
         } catch (Exception e) {
-            log.error("JwtService, Error generating token for username {}: {}", username, e.getMessage(), e);
+            log.error(ERROR_MESSAGE_ERROR_GENERATING_TOKEN, username, e.getMessage(), e);
             throw e;
         }
     }
@@ -51,7 +54,7 @@ public class JwtService {
                     .parseClaimsJws(token);
             return true;
         } catch (Exception e) {
-            log.error("JwtService, Error validating token: {}", e.getMessage(), e);
+            log.error(ERROR_MESSAGE_ERROR_VALIDATING_TOKEN, e.getMessage(), e);
             return false;
         }
     }

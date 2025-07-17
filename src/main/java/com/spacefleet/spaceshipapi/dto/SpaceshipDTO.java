@@ -1,19 +1,14 @@
 package com.spacefleet.spaceshipapi.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class SpaceshipDTO {
+public record SpaceshipDTO(
+        String id,
 
-    private String id;
-    private String name;
-    private String model;
-    private String manufacturer;
+        @NotBlank(message = "Spaceship Name is required")
+        String name,
 
-}
+        String model,
+
+        String manufacturer
+) {}

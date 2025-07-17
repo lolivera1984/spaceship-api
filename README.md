@@ -33,7 +33,7 @@ For example, if the request parameter is "wing", the response should include "X-
 - MongoDB persistence
 - Kafka messaging for spaceship events (delete flow / producer)
 - Security using JWT
-- Caching using Caffeine
+- Caching using Caffeine (findById , 1 min expiration)
 - Centralized exception handling
 - Aspect to log when accessing a spaceship with negative ID (WARN level)
 - OpenAPI documentation (Swagger UI)
@@ -114,10 +114,6 @@ Steps:
 2- Start the app with MongoDB and Kafka using Docker:
 
 ```bash
-docker compose -f docker/docker-compose.yml up --build
-
-or
-
 DOCKER_DEFAULT_PLATFORM=linux/amd64 docker-compose -f ./docker/docker-compose.yml up --build
 ```
 
@@ -219,8 +215,8 @@ VM Options:
 ------------------------------------------------------------------------
 ## Tech Debt
 - Custom Validators in the controller (Annotations)
-- Custom Request DTO for every endpoint with body request
-- MapStruct or some mapper to convert between model and DTO
+- Custom Request DTO/record for every endpoint with body request
+- MapStruct or some mapper to convert between model and DTO/records
 - Add more unit test coverage (reach at least 80%)
 - Implement caché in more places in the service and in the DDBB level 
 - Kafka create a consumer for the delete flow, which write in a special log (auditory mongo collection)

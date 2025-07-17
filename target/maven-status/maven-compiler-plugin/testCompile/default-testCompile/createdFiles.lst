@@ -1,3 +1,10 @@
 com/spacefleet/spaceshipapi/integration/SpaceshipIntegrationTest$1.class
-com/spacefleet/spaceshipapi/controller/SpaceshipControllerTest.class
 com/spacefleet/spaceshipapi/integration/SpaceshipIntegrationTest.class
+com/spacefleet/spaceshipapi/service/SpaceshipServiceTest.class
+com/spacefleet/spaceshipapi/controller/SpaceshipControllerTest.class
+com/spacefleet/spaceshipapi/config/TestSecurityConfig.class
+com/spacefleet/spaceshipapi/repository/SpaceshipRepositoryTest.class
+com/spacefleet/spaceshipapi/repository/UserRepositoryTest.class
+com/spacefleet/spaceshipapi/service/UserServiceTest.class
+com/spacefleet/spaceshipapi/controller/AuthControllerTest.class
+com/spacefleet/spaceshipapi/service/JwtServiceTest.class

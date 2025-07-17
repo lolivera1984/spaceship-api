@@ -11,6 +11,7 @@
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/dto/UserDTO.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/exception/GlobalExceptionHandler.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/exception/NotFoundException.java
+/Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/model/CollectionName.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/model/Spaceship.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/model/User.java
 /Users/leonardoolivera/work/personal/challenge_MindData/V2/spaceship-api/src/main/java/com/spacefleet/spaceshipapi/repository/SpaceshipRepository.java

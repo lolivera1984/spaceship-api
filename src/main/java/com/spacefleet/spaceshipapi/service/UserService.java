@@ -15,6 +15,10 @@ public class UserService {
 
     private final UserRepository repository;
 
+    private static final String MESSAGE_VALIDATING_CREDENTIALS = "UserService, Validating credentials for username: {}";
+    private static final String ERROR_MESSAGE_ERROR_VALIDATING_CREDENTIALS = "UserService, Error validating credentials for username {}: {}";
+
+
     @Autowired
     public UserService(UserRepository repository) {
         this.repository = repository;
@@ -25,7 +29,7 @@ public class UserService {
     }
 
     public boolean areCredentialsValid(String username, String password) {
-        log.info("UserService, Validating credentials for username: {}", username);
+        log.info(MESSAGE_VALIDATING_CREDENTIALS, username);
 
         if (username == null || password == null) {
             return false;
@@ -37,7 +41,7 @@ public class UserService {
                     .anyMatch(user -> password.equalsIgnoreCase(user.getPassword()));
 
         } catch (Exception e) {
-            log.error("UserService, Error validating credentials for username {}: {}", username, e.getMessage(), e);
+            log.error(ERROR_MESSAGE_ERROR_VALIDATING_CREDENTIALS, username, e.getMessage(), e);
             throw e;
         }
     }

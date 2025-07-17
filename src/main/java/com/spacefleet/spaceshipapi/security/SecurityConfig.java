@@ -25,6 +25,8 @@ public class SecurityConfig {
 
     private final JwtService jwtService;
 
+    private static final String AUTH_BEARER = "Bearer ";
+
     public SecurityConfig(JwtService jwtService) {
         this.jwtService = jwtService;
     }
@@ -75,7 +77,7 @@ public class SecurityConfig {
             }
 
             final String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-            if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            if (authHeader != null && authHeader.startsWith(AUTH_BEARER)) {
                 String token = authHeader.substring(7);
                 if (jwtService.validateToken(token)) {
                     UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
