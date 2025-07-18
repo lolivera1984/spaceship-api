@@ -6,12 +6,14 @@ import io.mongock.runner.springboot.base.MongockApplicationRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 @Configuration
 public class MongockConfig {
 
     @Bean
+    @Profile("!test")
     public MongockApplicationRunner mongockApplicationRunner(MongoTemplate mongoTemplate, ApplicationContext context) {
         SpringDataMongoV4Driver driver = SpringDataMongoV4Driver.withDefaultLock(mongoTemplate);
 

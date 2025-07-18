@@ -3,37 +3,39 @@ package com.spacefleet.spaceshipapi.integration;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spacefleet.spaceshipapi.dto.SpaceshipDTO;
+import com.spacefleet.spaceshipapi.model.User;
+import com.spacefleet.spaceshipapi.repository.AbstractMongoTest;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Map;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
-public class SpaceshipIntegrationTest {
-
-    @Container
-    static MongoDBContainer mongo = new MongoDBContainer("mongo:7.0");
-
-    @DynamicPropertySource
-    static void setMongoProps(DynamicPropertyRegistry registry) {
-        registry.add("spring.data.mongodb.uri", mongo::getReplicaSetUrl);
-    }
+@ActiveProfiles("test")
+public class SpaceshipIntegrationTest extends AbstractMongoTest {
 
     @LocalServerPort
     private int port;
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    @BeforeEach
+    void setUp() {
+        mongoTemplate.save(new User("id1", "name1", "admin", "admin123"), "users");
+    }
 
     @Test
     public void testCreateAndFetchSpaceship() throws Exception {

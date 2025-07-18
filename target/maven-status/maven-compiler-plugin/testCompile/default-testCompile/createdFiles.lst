@@ -1,5 +1,6 @@
 com/spacefleet/spaceshipapi/integration/SpaceshipIntegrationTest$1.class
 com/spacefleet/spaceshipapi/integration/SpaceshipIntegrationTest.class
+com/spacefleet/spaceshipapi/repository/AbstractMongoTest.class
 com/spacefleet/spaceshipapi/service/SpaceshipServiceTest.class
 com/spacefleet/spaceshipapi/controller/SpaceshipControllerTest.class
 com/spacefleet/spaceshipapi/config/TestSecurityConfig.class

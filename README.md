@@ -42,7 +42,7 @@ For example, if the request parameter is "wing", the response should include "X-
 
 ## 🧪 Test Credentials
 
-Login using:
+Login using: (2 possible users)
 
 ```
 POST /auth/login
@@ -134,7 +134,7 @@ Use the token in subsequent requests:
 ```bash
 --- Get All ----
 curl -X GET \
-  "http://localhost:8080/spaceships" \
+  "http://localhost:8080/spaceships?page=0&size=10" \
   -H "accept: */*" \
   -H "Authorization: Bearer <token>"
 ```
@@ -150,7 +150,7 @@ curl -X GET \
 ```bash
 --- Search ----
 curl -X GET \
-  "http://localhost:8080/spaceships/search?name=Space" \
+  "http://localhost:8080/spaceships/search?name=Space&page=0&size=10" \
   -H 'accept: */*' \
   -H "Authorization: Bearer <token>"
 ```

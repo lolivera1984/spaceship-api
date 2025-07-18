@@ -7,13 +7,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.data.domain.*;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataMongoTest
-class SpaceshipRepositoryTest {
+@ActiveProfiles("test")
+class SpaceshipRepositoryTest extends AbstractMongoTest {
 
     @Autowired
     private SpaceshipRepository repository;
